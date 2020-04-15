@@ -1,4 +1,4 @@
-# bityoga_fabric_test_chaincodes
+# Fabric Test Chaincodes
 Chaincodes to test bityoga hyperledger fabric environment
 
 
@@ -9,8 +9,8 @@ Chaincodes to test bityoga hyperledger fabric environment
  * Get into CLI container shell
    * **Command** - docker exec -it $(docker ps -qf "name=^CLI")  bash
  * cd /root/CLI/chaincodes
- * git clone https://github.com/anandhakumarpalanisamy/bityoga_fabric_test_chaincodes.git
- * cd /root/CLI/chaincodes/bityoga_fabric_test_chaincodes
+ * git clone https://github.com/bityoga/fabric_test_chaincodes.git
+ * cd /root/CLI/chaincodes/fabric_test_chaincodes
 
 
 
