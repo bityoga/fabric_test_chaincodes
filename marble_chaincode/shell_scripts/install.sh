@@ -8,4 +8,4 @@ export CORE_PEER_ADDRESS=$CORE_PEER_ADDRESS
 export CORE_PEER_MSPCONFIGPATH=$CORE_PEER_MSPCONFIGPATH
 export CORE_PEER_TLS_ROOTCERT_FILE=$CORE_PEER_TLS_ROOTCERT_FILE
 
-peer chaincode install -n marblecc -v 1.0 -l node -p /root/CLI/chaincodes/bityoga_fabric_test_chaincodes/marble_chaincode/src/
+peer chaincode install -n marblecc -v 1.0 -l node -p /root/CLI/chaincodes/fabric_test_chaincodes/marble_chaincode/src/
