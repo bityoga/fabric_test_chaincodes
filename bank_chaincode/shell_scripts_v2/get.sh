@@ -2,8 +2,8 @@
 set -x #echo on
 
 CHAINCODE_NAME="bank"
-QUERY_PARAMS='{"Args":["query","a"]}'
 CHANNEL_NAME="appchannel"
+QUERY_PARAMS='{"Args":["query","a"]}'
 
 export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051
