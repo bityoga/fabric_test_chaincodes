@@ -16,12 +16,13 @@ SIGNATURE_POLICY="OR('${ORGANISATION_NAME}.member')"
 CHANNEL_NAME="appchannel"
 SEQUENCE="1"
 
-export ORDERER_CA=/root/CLI/${ORGCA_HOST}/${ORDERER_HOST}/msp/cacerts/orgca-7054.pem
-export PACKAGE_ID=$(peer lifecycle chaincode queryinstalled --output json | jq .installed_chaincodes[0].package_id)
+
 export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051
 export CORE_PEER_MSPCONFIGPATH=/root/CLI/${ORGCA_HOST}/${ADMIN_USER}/msp
 export CORE_PEER_TLS_ROOTCERT_FILE=/root/CLI/${ORGCA_HOST}/${PEER_HOST}/msp/tls/ca.crt
+export ORDERER_CA=/root/CLI/${ORGCA_HOST}/${ORDERER_HOST}/msp/cacerts/orgca-7054.pem
+export PACKAGE_ID=$(peer lifecycle chaincode queryinstalled --output json | jq .installed_chaincodes[0].package_id)
 
 
 peer lifecycle chaincode approveformyorg -o ${ORDERER_HOST}:7050 --tls --cafile ${CORE_PEER_TLS_ROOTCERT_FILE} --channelID ${CHANNEL_NAME} --name ${CHAINCODE_NAME} --version ${CHAINCODE_VERSION} init-required --package-id ${PACKAGE_ID} --sequence ${SEQUENCE} --signature-policy ${SIGNATURE_POLICY}
