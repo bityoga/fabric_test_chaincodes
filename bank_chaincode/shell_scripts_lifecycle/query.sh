@@ -6,7 +6,7 @@ set -x #echo on
 CHAINCODE_NAME="bank"
 CHANNEL_NAME="appchannel"
 QUERY_PARAMS='{"Args":["query","a"]}'
-
+ORGANISATION_NAME="hlfMSP"
 
 export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051

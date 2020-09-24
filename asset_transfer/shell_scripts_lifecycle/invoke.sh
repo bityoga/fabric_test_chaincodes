@@ -7,6 +7,7 @@ CHAINCODE_NAME="asset"
 CHANNEL_NAME="appchannel"
 INSTANTIATE_PARAMS='{"Args":["InitLedger"]}'
 INVOKE_PARAMS='{"Args":["CreateAsset","asset10","blue","70","Tom","200"]}'
+ORGANISATION_NAME="hlfMSP"
 
 export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051

@@ -7,6 +7,8 @@ CHAINCODE_NAME="bank"
 CHANNEL_NAME="appchannel"
 INVOKE_PARAMS='{"Args":["invoke","a","b","10"]}'
 INSTANTIATE_PARAMS='{"Args":["init","a","100","b","200"]}'
+ORGANISATION_NAME="hlfMSP"
+
 export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051
 export CORE_PEER_MSPCONFIGPATH=/root/CLI/${ORGCA_HOST}/${ADMIN_USER}/msp
