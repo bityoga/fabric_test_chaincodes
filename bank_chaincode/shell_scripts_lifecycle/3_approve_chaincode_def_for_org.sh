@@ -28,4 +28,4 @@ export ORDERER_CA=/root/CLI/${ORGCA_HOST}/${ORDERER_HOST}/msp/tls/ca.crt
 export PACKAGE_ID=$(peer lifecycle chaincode queryinstalled --output json | jq .installed_chaincodes[0].package_id)
 
 
-peer lifecycle chaincode approveformyorg -o ${ORDERER_HOST}:7050 --tls --cafile ${ORDERER_CA} --channelID ${CHANNEL_NAME} --name ${CHAINCODE_NAME} --version ${CHAINCODE_VERSION} init-required --package-id ${PACKAGE_ID} --sequence ${SEQUENCE}
+peer lifecycle chaincode approveformyorg -o ${ORDERER_HOST}:7050 --tls --cafile ${ORDERER_CA} --channelID ${CHANNEL_NAME} --name ${CHAINCODE_NAME} --version ${CHAINCODE_VERSION} --package-id ${PACKAGE_ID} --sequence ${SEQUENCE}
