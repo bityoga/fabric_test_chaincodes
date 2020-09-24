@@ -1,0 +1,21 @@
+#!/bin/bash
+# peer chaincode query -C appchannel -n bank -c '{"Args":["query","a"]}'
+
+set -x #echo on
+
+CHAINCODE_NAME="asset"
+CHANNEL_NAME="appchannel"
+QUERY_PARAMS='{"Args":["GetAllAssets"]}'
+
+
+export PEER_HOST=peer2
+export CORE_PEER_ADDRESS=${PEER_HOST}:7051
+export CORE_PEER_MSPCONFIGPATH=/root/CLI/${ORGCA_HOST}/${ADMIN_USER}/msp
+export CORE_PEER_TLS_ROOTCERT_FILE=/root/CLI/${ORGCA_HOST}/${PEER_HOST}/msp/tls/ca.crt
+export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID=${ORGANISATION_NAME}
+
+export ORDERER_CA=/root/CLI/${ORGCA_HOST}/${ORDERER_HOST}/msp/tls/ca.crt
+export PACKAGE_ID=$(peer lifecycle chaincode queryinstalled --output json | jq .installed_chaincodes[0].package_id)
+
+peer chaincode query -C ${CHAINCODE_NAME} -n ${CHAINCODE_NAME} -c ${QUERY_PARAMS}
