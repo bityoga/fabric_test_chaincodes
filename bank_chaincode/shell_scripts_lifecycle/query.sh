@@ -18,4 +18,4 @@ export CORE_PEER_LOCALMSPID=${ORGANISATION_NAME}
 export ORDERER_CA=/root/CLI/${ORGCA_HOST}/${ORDERER_HOST}/msp/tls/ca.crt
 export PACKAGE_ID=$(peer lifecycle chaincode queryinstalled --output json | jq .installed_chaincodes[0].package_id)
 
-peer chaincode query -C ${CHAINCODE_NAME} -n ${CHAINCODE_NAME} -c ${QUERY_PARAMS}
+peer chaincode query -C ${CHANNEL_NAME} -n ${CHAINCODE_NAME} -c ${QUERY_PARAMS}
