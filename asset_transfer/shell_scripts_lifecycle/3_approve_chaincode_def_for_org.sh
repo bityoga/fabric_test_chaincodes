@@ -8,7 +8,7 @@ CHAINCODE_NAME="asset"
 CHAINCODE_VERSION="1.0"
 PACKAGE_NAME="${CHAINCODE_NAME}.tar.gz"
 CHAINCODE_LABEL="${CHAINCODE_NAME}_${CHAINCODE_VERSION}"
-CHAINCODE_SRC_CODE_PATH="/root/CLI/chaincodes/fabric_test_chaincodes/asset_transfer"
+CHAINCODE_SRC_CODE_PATH="/root/CLI/chaincodes/fabric_test_chaincodes/asset_transfer/src"
 CHANCODE_LANGUAGE="node"
 
 ORGANISATION_NAME="hlfMSP"
