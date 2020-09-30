@@ -1,5 +1,5 @@
 #!/bin/bash
-# peer lifecycle chaincode package bank.tar.gz --path /root/CLI/chaincodes/fabric_test_chaincodes/bank_chaincode/node/ --lang node --label bank_1
+# peer lifecycle chaincode package basic.tar.gz --path ../src/ --lang node --label basic_1.0
 
 set -x #echo on
 
@@ -12,11 +12,12 @@ CHANCODE_LANGUAGE="node"
 ORGANISATION_NAME="hlfMSP"
 
 
-export PEER_HOST=peer2
-export CORE_PEER_ADDRESS=${PEER_HOST}:7051
-export CORE_PEER_MSPCONFIGPATH=/root/CLI/${ORGCA_HOST}/${ADMIN_USER}/msp
-export CORE_PEER_TLS_ROOTCERT_FILE=/root/CLI/${ORGCA_HOST}/${PEER_HOST}/msp/tls/ca.crt
+
 export CORE_PEER_TLS_ENABLED=true
 export CORE_PEER_LOCALMSPID=${ORGANISATION_NAME}
+export CORE_PEER_TLS_ROOTCERT_FILE=/root/CLI/${ORGCA_HOST}/${PEER_HOST}/msp/tls/ca.crt
+export CORE_PEER_MSPCONFIGPATH=/root/CLI/${ORGCA_HOST}/${ADMIN_USER}/msp
+export PEER_HOST=peer2
+export CORE_PEER_ADDRESS=${PEER_HOST}:7051
 
 peer lifecycle chaincode package ${PACKAGE_NAME} --path ${CHAINCODE_SRC_CODE_PATH} --lang ${CHANCODE_LANGUAGE} --label ${CHAINCODE_LABEL}

@@ -1,5 +1,5 @@
 #!/bin/bash
-# peer chaincode query -C appchannel -n bank -c '{"Args":["query","a"]}'
+# peer chaincode query -C appchannel -n basic -c '{"Args":["GetAllAssets"]}'
 
 set -x #echo on
 
