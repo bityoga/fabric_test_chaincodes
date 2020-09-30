@@ -16,12 +16,11 @@ SIGNATURE_POLICY="OR('${ORGANISATION_NAME}.member')"
 CHANNEL_NAME="appchannel"
 SEQUENCE="1"
 
-
+export PEER_HOST=peer2
 export CORE_PEER_TLS_ENABLED=true
 export CORE_PEER_LOCALMSPID=${ORGANISATION_NAME}
 export CORE_PEER_TLS_ROOTCERT_FILE=/root/CLI/${ORGCA_HOST}/${PEER_HOST}/msp/tls/ca.crt
 export CORE_PEER_MSPCONFIGPATH=/root/CLI/${ORGCA_HOST}/${ADMIN_USER}/msp
-export PEER_HOST=peer2
 export CORE_PEER_ADDRESS=${PEER_HOST}:7051
 
 export CC_PACKAGE_ID=$(peer lifecycle chaincode queryinstalled --output json | jq .installed_chaincodes[0].package_id)
