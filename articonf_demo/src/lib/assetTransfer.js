@@ -115,8 +115,8 @@ class AssetTransfer extends Contract {
     if (updated_from_balance < 0) {
       throw new Error(`The user ${from_id} does not have sufficient balance`);
     } else {
-      await this.updatedAsset(ctx, from_id, updated_from_balance, "Debit");
-      await this.updatedAsset(ctx, to_id, updated_to_balance, "Credit");
+      await this.UpdateAsset(ctx, from_id, updated_from_balance, "Debit");
+      await this.UpdateAsset(ctx, to_id, updated_to_balance, "Credit");
     }
   }
 
