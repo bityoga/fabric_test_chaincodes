@@ -103,9 +103,9 @@ class AssetTransfer extends Contract {
     let to_asset = await this.GetAsset(ctx, to_id);
     let from_balance = parseInt(from_asset["Balance"].toString());
     let to_balance = parseInt(to_asset["Balance"].toString());
-    let amount = parseInt(amount);
-    let updated_from_balance = from_balance - amount;
-    let updated_to_balance = to_balance + amount;
+    let transfer_amount = parseInt(amount);
+    let updated_from_balance = from_balance - transfer_amount;
+    let updated_to_balance = to_balance + transfer_amount;
     if (updated_from_balance < 0) {
       throw new Error(`The user ${from_id} does not have sufficient balance`);
     } else {

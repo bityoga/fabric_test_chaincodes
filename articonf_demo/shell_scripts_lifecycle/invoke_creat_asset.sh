@@ -6,7 +6,7 @@ CHAINCODE_NAME="articonf-bank-demo"
 CHANNEL_NAME="appchannel"
 INVOKE_PARAMS='{"Args":["CreateAsset","ark","100","Initial Credit"]}'
 INVOKE_PARAMS2='{"Args":["CreateAsset","srk","100","Initial Credit"]}'
-ORGANISATION_NAME="hlfMSP"
+export ORGANISATION_NAME="hlfMSP"
 
 export PEER_HOST=peer2
 export CORE_PEER_TLS_ENABLED=true

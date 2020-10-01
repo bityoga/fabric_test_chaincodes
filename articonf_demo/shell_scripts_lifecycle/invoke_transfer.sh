@@ -5,7 +5,7 @@ set -x #echo on
 CHAINCODE_NAME="articonf-bank-demo"
 CHANNEL_NAME="appchannel"
 INVOKE_PARAMS='{"Args":["TransferBalance","ark","srk","5"]}'
-ORGANISATION_NAME="hlfMSP"
+export ORGANISATION_NAME="hlfMSP"
 
 export PEER_HOST=peer2
 export CORE_PEER_TLS_ENABLED=true
