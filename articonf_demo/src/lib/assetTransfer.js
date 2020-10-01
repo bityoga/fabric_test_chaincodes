@@ -99,8 +99,14 @@ class AssetTransfer extends Contract {
 
   // TransferAsset updates the owner field of asset with given id in the world state.
   async TransferBalance(ctx, from_id, to_id, amount) {
-    let from_asset = await this.GetAsset(ctx, from_id);
-    let to_asset = await this.GetAsset(ctx, to_id);
+    let from_asset_string = await this.ReadAsset(ctx, from_id);
+    let to_asset_string = await this.ReadAsset(ctx, to_id);
+    let from_asset = JSON.parse(from_asset_string);
+    let to_asset = JSON.parse(to_asset_string);
+    console.log("from_asset");
+    console.log(from_asset);
+    console.log("to_asset");
+    console.log(to_asset);
     let from_balance = parseInt(from_asset["Balance"].toString());
     let to_balance = parseInt(to_asset["Balance"].toString());
     let transfer_amount = parseInt(amount);
